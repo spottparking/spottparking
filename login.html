@@ -9,6 +9,17 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+.button {
+    padding: 5px;
+    margin-right: auto;
+    margin-top: 15px; 
+    margin-left: auto;
+    text-align: center; 
+    background-color: white;
+    height: 25px;
+    width: 80px;
+    font-size: 150%
+}
 </style>
 </head>
 <body style="background-color:#404040; color:black; font-family: helvetica; background-image:url('https://media.discordapp.net/attachments/1150165485485293619/1150187725933256784/image.png?width=1160&height=575');"></bodystyle>   
@@ -19,13 +30,15 @@ img {
 <center>
 <form action="/action_page.php">
 
-  <label for="username" style = "color: white; font-family: helvetica;">Username:</label><br>
-  <input type="text" id="username" name="username"><br><br>
+    <label for="username" style = "color: white; font-family: helvetica;">Username:</label><br>
+    <input type="text" id="username" name="username"><br><br>
 
-  <label for="pwd" style = "color: white; font-family: helvetica;">Password:</label><br>
-  <input type="password" id="pwd" name="pwd"><br><br>
+    <label for="pwd" style = "color: white; font-family: helvetica;">Password:</label><br>
+    <input type="password" id="pwd" name="pwd"><br><br>
 
 </form> 
 </center>
+
+<div class="button" onclick="window.location.href='./username.html';" >Enter</div> <br>
 </body>
 </html>
