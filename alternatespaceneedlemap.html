@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Needle Map</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+<style>
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+
+
+</head>
+<body style="background-color:#404040; color:white; font-family: helvetica; background:#404040; text-align:center">
+<a class="active" href="./guestpage.html"><img src="https://cdn.discordapp.com/attachments/1150187505820385391/1150187582727135273/image.png" alt="Logo" width = "125" height = "50"></a>
+<br><br>
+
+<h1>Space Needle Map</h1><br><br>
+<div class="popup">
+    <map name="workmap">
+        <area shape="rect" coords="430,260,518,298" alt="area" id="area1" onclick="myFunction3()">
+        <span class="popuptext" id="myPopup" onclick="javascript:alert('event has been triggered');"></span>
+        <area shape="rect" coords="430,510,465,540" alt="area"  id="area2" onclick="myFunction4()">
+        <span class="popuptext" id="otherPopup" onclick="myFunction2()"></span>
+        <area shape="rect" coords="662,278,720,300" alt="area"  id="area3" onclick="myFunction5()">
+        <span class="popuptext" id="thirdPopup" onclick="myFunction2()"></span>
+    </map>
+</div>
+
+<p style="text-align: left; font-size: 100%;">Add to favorites list: <input type="checkbox"></p>
+<script>
+
+function myFunction3() {
+  var popup = document.getElementById("area1");
+  alert('8 spots available; 0.2 miles to Space Needle; $4 per hour, $10 per hour after 7:00PM')
+  // popup.classList.toggle("show");
+  popup.classList.toggle("show");
+}
+function myFunction4() {
+  var popup = document.getElementById("area2");
+  alert('5 spots available; 0.1 miles to Space Needle; $8.15 for 0-2 hours, $3.26 for each additional hour')
+  // popup.classList.toggle("show");
+  popup.classList.toggle("show");
+}
+function myFunction5() {
+  var popup = document.getElementById("area3");
+  alert('6 spots available; 0.4 miles to Space Needle; $8 for 0-2 hours, $4 per hour, $18 for the whole day')
+  // popup.classList.toggle("show");
+  popup.classList.toggle("show");
+}
+</script>
+
+<img src="https://cdn.discordapp.com/attachments/1150187505820385391/1150478220190294097/image.png" alt="Seattle Map" usemap="#workmap" width="900" height="880">
+
+</body>
+</html>
