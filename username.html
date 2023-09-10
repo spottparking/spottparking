@@ -72,8 +72,28 @@ body {
   transition: margin-left .5s;
   padding: 16px;
 }
-
+.searchbar input[type=text] {
+    margin-left: auto;
+    padding: 6px;
+    margin-top: 20%;
+    margin-right: auto;
+    border: none;
+    font-size: 17px;
+    display: block;
+}
+.button {
+  padding: 5px;
+  margin-right: auto;
+  margin-top: 20% + 25px; 
+  margin-left: auto;
+  text-align: center; 
+  background-color: white;
+  height: 30px;
+  width: 80px;
+  font-size: 150%
+}
 </style>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
 
@@ -96,6 +116,9 @@ body {
     <li style = "color: white;"><a href="./spaceneedlemap.html" style = "color: white;">Space Needle</a></li>
   </ul>
 </div>
+<div class="searchbar">
+  <input type="text" placeholder="Enter a location" style = "width: 500px;" />
+</div>
 
 
 <script>
@@ -107,5 +130,6 @@ body {
         document.getElementById("main").style.marginLeft = "0";
     }
 </script>
+<div class="button" onclick="window.location.href='./seattle.html';" >Submit</div> <br>
 </body>
 </html>
