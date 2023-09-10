@@ -3,20 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Space Needle Map</title>
-</head>
-<body style="background-color:#404040; color:white; font-family: helvetica; background:#404040;">
-<img src="https://cdn.discordapp.com/attachments/1150165485485293619/1150167801458344136/image.png" alt="Logo" width="125" height="50" align="right">
-<br>
 <style>
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
 }
 </style>
-<h1 style="text-align:center; font-size:300%">Space Needle</h1>
-<img id="seattlemap"
-     src="https://cdn.discordapp.com/attachments/1150187505820385391/1150478220190294097/image.png" alt="Seattle Map" width="820" height="780">
+</head>
+<body style="background-color:#404040; color:white; font-family: helvetica; background:#404040; text-align:center">
+<img src="https://cdn.discordapp.com/attachments/1150165485485293619/1150167801458344136/image.png" alt="Logo" width="125" height="50" align="right">
+<br><br>
+
+
+
+<h1>Seattle Map</h1><br><br>
+<div class="popup">
+    <map name="workmap">
+        <area shape="rect" coords="187,25,321,80" alt="area" id="area1" onclick="myFunction3()">
+        <span class="popuptext" id="myPopup" onclick="javascript:alert('event has been triggered');"></span>
+        <area shape="rect" coords="600,600,800,800" alt="area"  id="area2" onclick="myFunction4()">
+        <span class="popuptext" id="otherPopup" onclick="myFunction2()"></span>
+    </map>
+</div>
+
+
+<script>
+
+function myFunction3() {
+  var popup = document.getElementById("area1");
+  alert('hello')
+  // popup.classList.toggle("show");
+  popup.classList.toggle("show");
+}
+function myFunction4() {
+  var popup = document.getElementById("area2");
+  alert('world')
+  // popup.classList.toggle("show");
+  popup.classList.toggle("show");
+}
+</script>
+
+<img src="https://cdn.discordapp.com/attachments/1150187505820385391/1150478220190294097/image.png" alt="Seattle Map" usemap="#workmap" width="820" height="780">
 
 </body>
 </html>
